@@ -8,7 +8,8 @@ entity Transacao {
 	nome String,
     date LocalDate,
     consolidada Boolean,
-    nota String
+    nota String,
+    tipo TipoTransacao
 }
 
 entity CategoriaTransacao {
@@ -22,17 +23,13 @@ enum TipoTransacao {
     TRANSFERENCIA
 }
 
-relationship OneToOne {
-	CategoriaTransacao{Categoria} to Transacao,
-    TipoTransacao{Transacao} to Transacao
-}
-
 relationship OneToMany {
-	Conta{Transacao} to Transacao
+	Conta to Transacao{Conta}
 }
 
 relationship ManyToOne {
-	Transacao{Conta} to Conta	
+	Transacao{Conta} to Conta,
+    CategoriaTransacao to Transacao{Categoria}
 }
 
 // Set pagination options
