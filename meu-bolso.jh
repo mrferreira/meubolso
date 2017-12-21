@@ -24,7 +24,7 @@ enum TipoTransacao {
 
 relationship OneToOne {
 	CategoriaTransacao{Categoria} to Transacao,
-    TipoTransacao{Tipo} to Transacao
+    TipoTransacao{Transacao} to Transacao
 }
 
 relationship OneToMany {
