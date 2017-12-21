@@ -1,0 +1,11 @@
+version: '2'
+services:
+    meubolso-postgresql:
+        image: postgres:9.6.5
+        # volumes:
+        #     - ~/volumes/jhipster/meubolso/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=meubolso
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
