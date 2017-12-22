@@ -1,0 +1,53 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "conta",
+            "otherEntityName": "conta",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "conta",
+            "otherEntityName": "conta",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "categoria",
+            "otherEntityName": "categoriaTransacao",
+            "otherEntityRelationshipName": ""
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "consolidada",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "nota",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipo",
+            "fieldType": "TipoTransacao",
+            "fieldValues": "ENTRADA,SAIDA,TRANSFERENCIA"
+        }
+    ],
+    "changelogDate": "20171222163254",
+    "entityTableName": "transacao",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mb"
+}

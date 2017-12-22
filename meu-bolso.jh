@@ -1,0 +1,43 @@
+entity Conta {
+	nome String,
+    saldoInicial BigDecimal,
+    ativa Boolean
+}
+
+entity Transacao {
+	nome String,
+    date LocalDate,
+    consolidada Boolean,
+    nota String,
+    tipo TipoTransacao
+}
+
+entity CategoriaTransacao {
+	nome String,
+    cor String
+}
+
+enum TipoTransacao {
+	ENTRADA, 
+    SAIDA, 
+    TRANSFERENCIA
+}
+
+relationship OneToMany {
+	Conta to Transacao{Conta}
+}
+
+relationship ManyToOne {
+	Transacao{Conta} to Conta,
+    CategoriaTransacao to Transacao{Categoria}
+}
+
+// Set pagination options
+paginate Transacao, CategoriaTransacao with infinite-scroll
+
+dto * with mapstruct
+
+// Set service options to all except few
+// service all with serviceImpl except Funcionario, Setor
+// Set an angular suffix
+angularSuffix * with mb
